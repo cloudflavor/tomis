@@ -2,6 +2,11 @@
 name = "tomis"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
+authors = ["Victor Palade <victor@cloudflavor.io>"]
+homepage = "https://cloudflavor.io"
+repository = "https://github.com/cloudflavor/tomis"
+description = "Tomis is a control plane for managing kubernetes clusters"
 
 [dependencies]
 tokio = { version = "^1.38", features = ["rt-multi-thread", "macros"] }

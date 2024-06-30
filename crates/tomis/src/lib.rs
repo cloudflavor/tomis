@@ -14,8 +14,9 @@
 
 use structopt::StructOpt;
 
-pub mod kube;
-pub mod server;
+pub (crate) mod kube;
+pub (crate) mod server;
+pub (crate) mod cloud;
 
 pub mod tomis_cloud {
     tonic::include_proto!("tomis.cloud.v1");

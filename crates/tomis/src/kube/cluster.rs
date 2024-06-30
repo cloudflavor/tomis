@@ -11,3 +11,25 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+
+use actix::prelude::*;
+
+#[derive(Message)]
+#[rtype(result = "Result<(), ()>")]
+struct CreateCluster {
+    pub name: String,
+}
+
+struct ClusterActor;
+
+impl Actor for ClusterActor {
+    type Context = Context<Self>;
+}
+
+impl Handler<CreateCluster> for ClusterActor {
+    type Result = Result<(), ()>;
+
+    fn handle(&mut self, msg: CreateCluster, _: &mut Self::Context) -> Self::Result {
+        Ok(())
+    }
+}
