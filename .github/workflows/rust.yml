@@ -7,10 +7,15 @@ env:
   CARGO_TERM_COLOR: always
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     container:
-      image: ubuntu:22.04
+      image: santorini.home.arpa/library/ubuntu:22.04
     steps:
+    - name: Install dependencies
+      run: |
+        apt-get update
+        DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            curl ca-certificates build-essential git pkg-config libssl-dev
     - name: Install packages
       run: |
         apt-get update && apt-get install -y curl \
